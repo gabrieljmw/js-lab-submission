@@ -33,7 +33,7 @@ let circumference = (2 * Math.PI * radius).toFixed(1); //The toFixed() method fo
 document.write(`The circumference is ${circumference}` + "<br>");
 
 //EXERCISE 5: The Temperature Converter
-//Store a celsius temperature into a variable. Convert it to fahrenheit and output "NN°C is NN°F".  Now store a fahrenheit temperature into a variable. Convert it to celsius and output "NN°F is NN°C."
+//Store a celsius temperature into a variable. Convert it to fahrenheit and output "NN°C is NN°F".  Now store a fahrenheit temperature into a variable. Convert it to celsius and output "NN°F is NN°C"
 let celcius = 23;
 let fahrenheit = (celcius * 9 / 5) + 32;
 document.write(`${celcius}°C is ${fahrenheit}°F` + "<br>");
