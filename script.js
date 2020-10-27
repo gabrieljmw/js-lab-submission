@@ -42,24 +42,23 @@ celcius = ((fahrenheit - 32) * 5 / 9).toFixed(1);
 document.write(`${fahrenheit}°F is ${celcius}°C` + "<br><br>");
 
 
+
 // EXERCISE 1
 // Write a function named squareNumber that will take one argument (a number), square that number, and return the result. It should also log a string like "The result of squaring the number 3 is 9."
-let squareNumber = (num) => Math.sqrt(num);
-document.write(`The result of squaring the number 49 is ${squareNumber(49)}` + "<br>");
+const squareNumber = (num) => Math.pow(num, 2);
 
 // EXERCISE 2
 // Write a function named halfNumber that will take one argument (a number), divide it by 2, and return the result. It should also log a string like "Half of 5 is 2.5.".
-let halfNumber = (num) => num / 2;
-document.write(`Half of 26 is ${halfNumber(26)}` + "<br>");
+const halfNumber = (num) => num / 2;
 
 // EXERCISE 3
 // Write a function named percentOf that will take two numbers, figure out what percent the first number represents of the second number, and return the result. It should also log a string like "2 is 50% of 4."
-
+const percentOf = (a, b) => ((a / b) * 100);
 
 // EXERCISE 4
 // Write a function named areaOfCircle that will take one argument (the radius), calculate the area based on that, and return the result. It should also log a string like "The area for a circle with radius 2 is 12.566370614359172."
-//      Bonus: Round the result so there are only two digits after the decimal.
-
+// Bonus: Round the result so there are only two digits after the decimal.
+const areaOfCircle = (r) => (Math.PI * (Math.pow(r, 2))).toFixed(2);
 
 // EXERCISE 5
 // Write a function named runAll that will take one argument (a number) and perform the following operations, using the functions you wrote earlier
@@ -67,3 +66,11 @@ document.write(`Half of 26 is ${halfNumber(26)}` + "<br>");
 //      2. Square the result of #1 and store that result. 
 //      3. Calculate the area of a circle with the result of #2 as the radius.   
 //      4. Calculate what percentage that area (#3) is of the squared result (#2).
+const runAll = function(number) {
+    let halfNum = halfNumber(number);
+    let squared = squareNumber(halfNum);
+    let area = areaOfCircle(squared);
+    let percent = percentOf(area, squared);
+    let results = [halfNum, squared, area, percent];
+    return results;
+}
