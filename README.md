@@ -1,7 +1,8 @@
-The labs submitted in this deliverable:
+# The labs submitted in this deliverable:
 
--Variables (5 Exercises)
--Function (5 Exercises)
+- Variables (5 Exercises)
+- Function (5 Exercises)
+
 Document Output
 - In HTML, create an <ol>
 - Within the ordered-list, add 10 <li>
