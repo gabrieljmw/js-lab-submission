@@ -92,7 +92,7 @@ const allExamples = [ex1, ex2, ex3, ex4, ex5,
 // allExamples.push(runAll(7)); cant do this it'll make it 2D
 // runAll(7).forEach(element => {
 //     allExamples.push(element);
-// });
+// })
 let ul = document.querySelector(".examples");
 let items = ul.getElementsByTagName("li");
 
