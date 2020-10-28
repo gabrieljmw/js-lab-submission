@@ -41,7 +41,7 @@ let ex5 = (`${fahrenheit}°F is ${toC}°C & ${celcius}°C is ${toF}°F `);
 // Write a function named squareNumber that will take one argument (a number), square that number, and return the result. It should also log a string like "The result of squaring the number 3 is 9."
 const squareNumber = (num) => {
     let square = Math.pow(num, 2);
-    let output = `The result of squaring the number ${num} is ${Math.pow(num,2)}`;
+    let output = `The result of squaring the number ${num} is ${square}`;
     return [square, output];
 };
 
@@ -50,7 +50,7 @@ const squareNumber = (num) => {
 // Write a function named halfNumber that will take one argument (a number), divide it by 2, and return the result. It should also log a string like "Half of 5 is 2.5.".
 const halfNumber = (num) => {
     let half = num / 2;
-    let output = `Half of ${num} is ${num/2}`;
+    let output = `Half of ${num} is ${half}`;
     return [half, output];
 };
 
@@ -58,7 +58,7 @@ const halfNumber = (num) => {
 // Write a function named percentOf that will take two numbers, figure out what percent the first number represents of the second number, and return the result. It should also log a string like "2 is 50% of 4."
 const percentOf = (a, b) => {
     let percent = ((a / b) * 100);
-    let output = `${a} is ${(a / b) * 100} of ${b}`;
+    let output = `${a} is ${percent}% of ${b}`;
     return [percent, output];
 };
 
