@@ -12,7 +12,7 @@ let ex1 = (`You will be a ${title} in ${geographic}, making $${salary} for ${com
 let currentYear = 2020;
 let birthYear = 1996;
 let age = 2020 - 1996;
-let ex2 = (`They are ${age} years old.`)
+let ex2 = (`They are ${age} years old.`);
 
 //EXERCISE 3: The Lifetime Supply Calculator
 //Store your current age into a variable. Store a maximum age into a variable. Store an estimated amount per day (as a number). Calculate how many you would eat total for the rest of your life. Output the result to the console like so: "You will need NN to last you until the ripe old age of X".
@@ -84,7 +84,7 @@ const runAll = (number) => {
     let percent = percentOf(area, squared)[0];
     let results = `The number ${number} halved is ${halfNum}. <br> The result of ${halfNum} squared is ${squared} <br> The area of a circle with ${squared} radius is ${area} <br> The area is ${percent}% of ${squared}`;
     return results;
-}
+};
 
 /*
 Document Output
@@ -104,15 +104,16 @@ const allExamples = [ex1, ex2, ex3, ex4, ex5,
     runAll(number)
 ];
 
+let ol = document.querySelector(".examples");
+let items = ol.getElementsByTagName("li");
+allExamples.forEach((value, index) => items[index].innerHTML = value);
+
+//graveyard 
+
 // allExamples.push(runAll(7)); cant do this it'll make it 2D
 // runAll(7).forEach(element => { //fix for earlier implementation, left for reference
 //     allExamples.push(element);
 // })
-
-let ol = document.querySelector(".examples");
-let items = ol.getElementsByTagName("li");
-
-allExamples.forEach((value, index, t) => items[index].innerHTML = value);
 
 //original iteration implementation
 // for (let i = 0; i < items.length; ++i) {
