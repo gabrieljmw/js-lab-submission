@@ -108,9 +108,15 @@ const allExamples = [ex1, ex2, ex3, ex4, ex5,
 // runAll(7).forEach(element => { //fix for earlier implementation, left for reference
 //     allExamples.push(element);
 // })
+
 let ol = document.querySelector(".examples");
 let items = ol.getElementsByTagName("li");
 
-for (let i = 0; i < items.length; ++i) {
-    items[i].innerHTML = allExamples[i]; // List items 1 - 10 correspond with example output 1 - 10 from array allExamples
-}
+allExamples.forEach((value, index) => {
+    items[index].innerHTML = value;
+});
+
+//original iteration implementation
+// for (let i = 0; i < items.length; ++i) {
+//     items[i].innerHTML = allExamples[i]; // List items 1 - 10 correspond with example output 1 - 10 from array allExamples
+// }
