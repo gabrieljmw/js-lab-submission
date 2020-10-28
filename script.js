@@ -31,30 +31,45 @@ let ex4 = (`The circumference is ${circumference}`);
 //EXERCISE 5: The Temperature Converter
 //Store a celsius temperature into a variable. Convert it to fahrenheit and output "NN°C is NN°F".  Now store a fahrenheit temperature into a variable. Convert it to celsius and output "NN°F is NN°C"
 let celcius = 23;
-let fahrenheit = (celcius * 9 / 5) + 32;
-// document.write(`${celcius}°C is ${fahrenheit}°F` + "<br>");
-fahrenheit = 88;
-celcius = ((fahrenheit - 32) * 5 / 9).toFixed(1);
-let ex5 = (`${fahrenheit}°F is ${celcius}°C`);
-
+let toF = (celcius * 9 / 5) + 32;
+let fahrenheit = 103;
+let toC = ((fahrenheit - 32) * 5 / 9).toFixed(1);
+let ex5 = (`${fahrenheit}°F is ${toC}°C & ${celcius}°C is ${toF}°F `);
 
 
 // EXERCISE 1
 // Write a function named squareNumber that will take one argument (a number), square that number, and return the result. It should also log a string like "The result of squaring the number 3 is 9."
-const squareNumber = (num) => Math.pow(num, 2);
+const squareNumber = (num) => {
+    let square = Math.pow(num, 2);
+    let output = `The result of squaring the number ${num} is ${Math.pow(num,2)}`;
+    return [square, output];
+};
+
 
 // EXERCISE 2
 // Write a function named halfNumber that will take one argument (a number), divide it by 2, and return the result. It should also log a string like "Half of 5 is 2.5.".
-const halfNumber = (num) => num / 2;
+const halfNumber = (num) => {
+    let half = num / 2;
+    let output = `Half of ${num} is ${num/2}`;
+    return [half, output];
+};
 
 // EXERCISE 3
 // Write a function named percentOf that will take two numbers, figure out what percent the first number represents of the second number, and return the result. It should also log a string like "2 is 50% of 4."
-const percentOf = (a, b) => ((a / b) * 100);
+const percentOf = (a, b) => {
+    let percent = ((a / b) * 100);
+    let output = `${a} is ${(a / b) * 100} of ${b}`;
+    return [percent, output];
+};
 
 // EXERCISE 4
 // Write a function named areaOfCircle that will take one argument (the radius), calculate the area based on that, and return the result. It should also log a string like "The area for a circle with radius 2 is 12.566370614359172."
 // Bonus: Round the result so there are only two digits after the decimal.
-const areaOfCircle = (r) => (Math.PI * (Math.pow(r, 2))).toFixed(2);
+const areaOfCircle = (r) => {
+    let area = (Math.PI * (Math.pow(r, 2))).toFixed(2);
+    let output = `The area of a circle with ${r} radius is ${area}`;
+    return [area, output];
+};
 
 // EXERCISE 5
 // Write a function named runAll that will take one argument (a number) and perform the following operations, using the functions you wrote earlier
@@ -62,12 +77,12 @@ const areaOfCircle = (r) => (Math.PI * (Math.pow(r, 2))).toFixed(2);
 //      2. Square the result of #1 and store that result. 
 //      3. Calculate the area of a circle with the result of #2 as the radius.   
 //      4. Calculate what percentage that area (#3) is of the squared result (#2).
-const runAll = function(number) {
-    let halfNum = halfNumber(number);
-    let squared = squareNumber(halfNum);
-    let area = areaOfCircle(squared);
-    let percent = percentOf(area, squared);
-    let results = `The number ${number} halved is ${halfNum}. <br> The result of #1 squared is ${squared} <br> The area of a circle with ${squared} radius is ${area} <br> The area is ${percent}% of ${squared}`;
+const runAll = (number) => {
+    let halfNum = halfNumber(number)[0]; // [0] to access the function return VALUE for manipulation
+    let squared = squareNumber(halfNum)[0];
+    let area = areaOfCircle(squared)[0];
+    let percent = percentOf(area, squared)[0];
+    let results = `The number ${number} halved is ${halfNum}. <br> The result of ${halfNum} squared is ${squared} <br> The area of a circle with ${squared} radius is ${area} <br> The area is ${percent}% of ${squared}`;
     return results;
 }
 
@@ -82,20 +97,20 @@ Instead of outputting to the console, put the string output from the previous 10
 let number = 7;
 let secondNumber = 56;
 const allExamples = [ex1, ex2, ex3, ex4, ex5,
-    squareNumber(number),
-    halfNumber(number),
-    percentOf(number, secondNumber),
-    areaOfCircle(number),
+    squareNumber(number)[1], //[1] to access the function return OUTPUT for printing purposes
+    halfNumber(number)[1],
+    percentOf(number, secondNumber)[1],
+    areaOfCircle(number)[1],
     runAll(number)
 ];
 
 // allExamples.push(runAll(7)); cant do this it'll make it 2D
-// runAll(7).forEach(element => {
+// runAll(7).forEach(element => { //fix for earlier implementation, left for reference
 //     allExamples.push(element);
 // })
-let ul = document.querySelector(".examples");
-let items = ul.getElementsByTagName("li");
+let ol = document.querySelector(".examples");
+let items = ol.getElementsByTagName("li");
 
 for (let i = 0; i < items.length; ++i) {
-    items[i].innerHTML = allExamples[i];
+    items[i].innerHTML = allExamples[i]; // List items 1 - 10 correspond with example output 1 - 10 from array allExamples
 }
