@@ -112,9 +112,7 @@ const allExamples = [ex1, ex2, ex3, ex4, ex5,
 let ol = document.querySelector(".examples");
 let items = ol.getElementsByTagName("li");
 
-allExamples.forEach((value, index) => {
-    items[index].innerHTML = value;
-});
+allExamples.forEach((value, index, t) => items[index].innerHTML = value);
 
 //original iteration implementation
 // for (let i = 0; i < items.length; ++i) {
